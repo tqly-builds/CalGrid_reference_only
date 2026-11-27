@@ -1,1 +1,14 @@
 
+# the EIA key: never in this repository
+.env
+*.key
+
+# downloads, re-created by the scripts
+sim/data_cache/
+
+# script outputs, re-created by the scripts
+sim/results/
+
+__pycache__/
+~$*
+.DS_Store
