@@ -79,7 +79,7 @@ if args.test_missing:
     D.loc[cut, "vendor_mwh"] = np.nan
     print(f"TEST: purchased forecast blanked for {int(cut.sum())} hours on {day} ({h1}:00-{h2}:00)")
 # Missing purchased forecast (vendor file incomplete): use that hour's demand one week earlier,
-# the same rule v10 used for a missing published forecast, and flag it for the status tile.
+# and flag it for the status tile.
 D["vendor_missing"] = D["vendor_mwh"].isna()
 D["vendor_mwh"] = D["vendor_mwh"].fillna(D["period"].map(lag_src.shift(168)))
 print(f"Purchased forecast missing (filled with last week's demand): {int(D['vendor_missing'].sum())} hours")
