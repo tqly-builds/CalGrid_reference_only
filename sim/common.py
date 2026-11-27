@@ -6,7 +6,7 @@ Data sources (all free):
   - Open-Meteo Historical Weather API (ERA5 reanalysis = actual weather), used to TRAIN the vendor model.
   - Open-Meteo Previous Runs API (forecasts made 24 h / 48 h earlier), used to PREDICT, so the
     vendor only sees weather forecasts that existed before the 10 a.m. bid.
-Every download is cached in sim/data_cache/ (not pushed to GitHub), so a second run is fast.
+Every download is cached in sim/data_cache/ (kept out of the backup copy), so a second run is fast.
 """
 import os, json, time
 import numpy as np
